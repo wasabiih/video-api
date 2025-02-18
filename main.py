@@ -7,7 +7,10 @@ from google.cloud import storage
 import tempfile
 
 app = FastAPI()
-
+# Añadir endpoint de salud
+@app.get("/")
+async def health_check():
+    return {"status": "healthy"}
 # Configuración específica de tu Google Cloud Storage
 BUCKET_NAME = "amkrbucket"
 BASE_VIDEO_NAME = "Video Base ‐ Hecho con Clipchamp (1).mp4"
